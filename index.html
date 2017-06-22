@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<script src="cookieconsent.js"></script>
+		<script>
+		    window.addEventListener("load", function(){            
+	            var locator = new cookieconsent.Location({});
+	            locator.locate(function(serviceResult) {
+	            	var country = serviceResult.code;
+	            	console.log(country);          
+	                document.getElementById("country").innerHTML = country;
+	            }, function (err) {
+	                console.error(err)
+	            });	            
+	        }); 
+		 	       
+        </script>
+    </head>
+    <body>
+        <div id="country"></div>
+    </body>
+</html>
